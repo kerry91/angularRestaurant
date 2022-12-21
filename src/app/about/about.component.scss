@@ -12,7 +12,7 @@
   }
 
   .right-facts{
-    width: 30%;
+    width: 25%;
   }
 
   .bottom-quote{
@@ -21,4 +21,31 @@
 
   .leadership{
     width: 100%;
+  }
+
+  app-leaderdetail{
+    word-wrap: break-word;
+  }
+
+  @media screen and (max-width: 576px) {
+    .container{
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .left-history{
+      width: 80%;
+    }
+  
+    .right-facts{
+      width: 80%;
+    }
+  
+    .bottom-quote{
+      width: 80%;
+    }
+  
+    .leadership{
+      width: 80%;
+    }
   }

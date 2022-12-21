@@ -4,6 +4,9 @@
       <h2>Menu</h2>
       <hr />
     </div>
+    <div [hidden]="dishes">
+      <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
+    </div>
   </div>
 
   <div class="spinner" *ngIf="dishes">
@@ -16,8 +19,6 @@
       </mat-grid-tile>
     </mat-grid-list>
   </div>
-  <div [hidden]="dishes">
-    <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
-  </div>
+
 </div>
 
