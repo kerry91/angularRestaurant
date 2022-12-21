@@ -1,0 +1,26 @@
+mat-card{
+    position: relative !important;
+    margin-top: 200px;
+    width: 45vw;
+    height: auto;
+}
+
+mat-list {
+    position: absolute !important;
+    margin-top: 450px !important;
+  }
+
+.container{
+    display: flex;
+    flex-direction: row;
+  }
+
+@media screen and (max-width: 576px) {
+    mat-card{
+        width: auto;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+      }
+  }

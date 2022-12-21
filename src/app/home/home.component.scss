@@ -1,0 +1,19 @@
+mat-card{
+    width: 50vw;
+    height: auto;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+  }
+
+@media screen and (max-width: 576px) {
+    .container{
+      display: flex;
+      flex-direction: column;
+    }
+    mat-card{
+        width: auto;
+    }
+  }
