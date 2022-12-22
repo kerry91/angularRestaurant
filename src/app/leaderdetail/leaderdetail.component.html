@@ -2,10 +2,10 @@
   <div fxFlex *ngIf="leaders">
     <mat-list class="example-list-wrapping" *ngFor="let leader of leaders">
       <mat-list-item lines="3">
-        <img matListItemAvatar src={{leader.image}} alt="...">
-          <span matListItemTitle>{{leader.name}}</span>
+        <img matListItemAvatar src="{{ BaseURL + leader.image}}" alt="...">
+          <span matListItemTitle >{{leader.name}}</span>
           <span matListItemLine>{{leader.position}}</span>
-         {{leader.text}}
+          {{leader.description}}
       </mat-list-item>
     </mat-list>
   </div>

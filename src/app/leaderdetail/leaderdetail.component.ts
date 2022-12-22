@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { Leader } from '../shared/leader';
 import { LeaderService } from '../services/leader.service';
 
@@ -11,9 +11,11 @@ import { Location } from '@angular/common';
   styleUrls: ['./leaderdetail.component.scss']
 })
 export class LeaderdetailComponent {
+  
     leaders: Leader[];
 
-  constructor(private leaderService: LeaderService) { }
+  constructor(private leaderService: LeaderService,
+    @Inject('BaseURL') public BaseURL) { }
   
   ngOnInit() {
     this.leaderService.getLeaders()

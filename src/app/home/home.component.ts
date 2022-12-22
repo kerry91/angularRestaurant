@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject} from '@angular/core';
 import { Dish } from '../shared/dish';
 import { DishService } from '../services/dish.service';
 import { Promotion } from '../shared/promotion';
@@ -13,22 +13,23 @@ import { LeaderService } from '../services/leader.service';
 })
 export class HomeComponent {
 
-  dish: Dish;
-  promotion: Promotion;
-  leader: Leader;
+  dishes: Dish;
+  promotions: Promotion;
+  leaders: Leader;
 
   
 
   constructor(private dishservice: DishService,
     private promotionservice: PromotionService,
-    private leaderservice: LeaderService) { }
+    private leaderservice: LeaderService,
+    @Inject('BaseURL') public BaseURL) { }
 
   ngOnInit() {
     this.dishservice.getFeaturedDish()
-    .subscribe(dish => this.dish = dish);
+    .subscribe(dish => this.dishes = dish);
     this.promotionservice.getFeaturedPromotion()
-    .subscribe(promotion => this.promotion = promotion);
+    .subscribe(promotion => this.promotions = promotion);
     this.leaderservice.getFeaturedLeader()
-    .subscribe(leader => this.leader = leader);
+    .subscribe(leader => this.leaders = leader);
   }
 }

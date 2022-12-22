@@ -1,15 +1,15 @@
-<div class="spinner" *ngIf="dish">
+<div class="spinner" *ngIf="dishes">
   <div class="container">
     <mat-card>
       <mat-card-header>
         <mat-card-title>
-          <h2 *ngIf="dish">{{dish.name | uppercase}}</h2>
+          <h2 *ngIf="dishes">{{dishes.name | uppercase}}</h2>
         </mat-card-title>
       </mat-card-header>
-      <img mat-card-image src="{{ dish.image }}" alt="{{ dish.name }}" />
+      <img mat-card-image src="{{ BaseURL + dishes.image }}" alt="{{ dishes.name }}" />
       <br />
       <mat-card-content>
-        <p>{{ dish.description }}</p>
+        <p>{{ dishes.description }}</p>
       </mat-card-content>
       <br />
       <mat-card-actions>
@@ -29,7 +29,7 @@
     <div class="container">
       <mat-list role="list">
         <h2>Comments</h2>
-        <mat-list-item *ngFor="let comment of dish.comments">
+        <mat-list-item *ngFor="let comment of dishes.comments">
           <h4 matListItemTitle>{{ comment.comment }}</h4>
           <span matListItemLine>{{ comment.rating }} Stars</span>
           <span matListItemLine>-- {{ comment.author }} {{ comment.date | date }}</span>
@@ -98,7 +98,7 @@
     </div>
   </div>
 </div>
-<div [hidden]="dish">
+<div [hidden]="dishes">
   <mat-spinner></mat-spinner>
   <h4>Loading . . . Please Wait</h4>
 </div>

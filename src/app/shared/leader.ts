@@ -3,6 +3,6 @@ export class Leader {
     image: string
     name: string
     position: string
-    text: string
+    description: string
     featured: boolean;
 }

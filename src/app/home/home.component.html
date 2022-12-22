@@ -3,62 +3,62 @@
     <div class="homeWrapper">
 
       <div class="homeTile">
-        <div class="spinnerDish" [hidden]="dish">
+        <div class="spinnerDish" [hidden]="dishes">
           <mat-spinner></mat-spinner>
           <h4>Loading . . . Please Wait</h4>
         </div>
-        <mat-card *ngIf="dish">
+        <mat-card *ngIf="dishes">
           <mat-card-header>
             <div mat-card-avatar></div>
             <mat-card-title>
-              <h3>{{dish.name | uppercase}}</h3>
+              <h3>{{dishes.name | uppercase}}</h3>
             </mat-card-title>
           </mat-card-header>
-          <img mat-card-image src="{{dish.image}}" alt="{{dish.name}}" />
+          <img mat-card-image src="{{BaseURL + dishes.image}}" alt="{{dishes.name}}" />
           <mat-card-content>
-            <p>{{dish.description}}</p>
+            <p>{{dishes.description}}</p>
           </mat-card-content>
         </mat-card>
       </div>
 
       <div class="homeTile">
-        <div class="spinnerPromotion" [hidden]="promotion">
+        <div class="spinnerPromotion" [hidden]="promotions">
           <mat-spinner></mat-spinner>
           <h4>Loading . . . Please Wait</h4>
         </div>
-        <mat-card *ngIf="promotion">
+        <mat-card *ngIf="promotions">
           <mat-card-header>
             <div mat-card-avatar></div>
             <mat-card-title>
-              <h3>{{promotion.name | uppercase}}</h3>
+              <h3>{{promotions.name | uppercase}}</h3>
             </mat-card-title>
           </mat-card-header>
           <img
             mat-card-image
-            src="{{promotion.image}}"
-            alt="{{promotion.name}}"
+            src="{{BaseURL + promotions.image}}"
+            alt="{{promotions.name}}"
           />
           <mat-card-content>
-            <p>{{promotion.description}}</p>
+            <p>{{promotions.description}}</p>
           </mat-card-content>
         </mat-card>
       </div>
 
       <div class="homeTile">
-        <div class="spinnerLeader" [hidden]="leader">
+        <div class="spinnerLeader" [hidden]="leaders">
           <mat-spinner></mat-spinner>
           <h4>Loading . . . Please Wait</h4>
         </div>
-        <mat-card *ngIf="leader">
+        <mat-card *ngIf="leaders">
           <mat-card-header>
             <div mat-card-avatar></div>
             <mat-card-title>
-              <h3>{{leader.name | uppercase}}</h3>
+              <h3>{{leaders.name | uppercase}}</h3>
             </mat-card-title>
           </mat-card-header>
-          <img mat-card-image src="{{leader.image}}" alt="{{leader.name}}" />
+          <img mat-card-image src="{{ BaseURL + leaders.image}}" alt="{{leaders.name}}" />
           <mat-card-content>
-            <p>{{leader.text}}</p>
+            <p>{{leaders.description}}</p>
           </mat-card-content>
         </mat-card>
       </div>
