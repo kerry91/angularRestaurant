@@ -5,21 +5,26 @@ mat-card{
     height: auto;
 }
 
-mat-list {
-    position: absolute !important;
-    margin-top: 350px !important;
+.dish-detail{
+    width: 100vw;
+  }
+
+.dish-detail-wrapper{
+    display: flex;
+    flex-direction: row;
+  }
+
+ .dish-detail-comment{
+  padding-left: 20px;
+ } 
+
+  mat-list {
+    margin-top: 50px !important;
   }
 
   mat-form-field{
     width: 50vw;
-  }  
-
-.container{
-    display: flex;
-    flex-direction: row;
-    height: auto;
-    margin-bottom: 500px;
-  }
+  } 
 
 @media screen and (max-width: 576px) {
     mat-card{
@@ -29,9 +34,11 @@ mat-list {
     mat-list {
       margin-top: 50px !important;
     }
-    .container{
+    mat-form-field{
+      width: 80vw;
+    } 
+    .dish-detail-wrapper{
         display: flex;
         flex-direction: column;
-        margin-bottom: 600px;
       }
   }
