@@ -38,10 +38,10 @@
 
         <div >
         <mat-list-item>
-          <h4 matListItemTitle>{{feedbackForm.value.comment}}</h4>
-          <span matListItemLine>{{feedbackForm.value.rating}} Stars</span>
+          <h4 matListItemTitle>{{commentForm.value.comment}}</h4>
+          <span matListItemLine>{{commentForm.value.rating}} Stars</span>
           <span matListItemLine>
-            -- {{feedbackForm.value.authorname}} {{ feedbackForm.value.date |
+            -- {{commentForm.value.author}} {{ commentForm.value.date |
             date }}
             </span>
         </mat-list-item>
@@ -51,20 +51,20 @@
 
         <form
           novalidate
-          [formGroup]="feedbackForm"
+          [formGroup]="commentForm"
           #fform="ngForm"
           (ngSubmit)="onSubmit()"
         >
           <mat-form-field class="half-width">
             <input
               matInput
-              formControlName="authorname"
+              formControlName="author"
               placeholder="First Name"
               type="text"
               required
             />
-            <mat-error *ngIf="formErrors.authorname"
-              >{{formErrors.authorname}}</mat-error
+            <mat-error *ngIf="formErrors.author"
+              >{{formErrors.author}}</mat-error
             >
           </mat-form-field>
           <br />
@@ -89,7 +89,7 @@
             type="submit"
             mat-button
             class="background-primary text-floral-white"
-            [disabled]="feedbackForm.invalid"
+            [disabled]="commentForm.invalid"
           >
             Submit
           </button>
@@ -98,7 +98,11 @@
     </div>
   </div>
 </div>
-<div [hidden]="dishes">
+<div [hidden]="dishes || errMess">
   <mat-spinner></mat-spinner>
   <h4>Loading . . . Please Wait</h4>
+</div>
+<div *ngIf="errMess">
+  <h2>Error</h2>
+  <h4>{{errMess}}</h4>
 </div>

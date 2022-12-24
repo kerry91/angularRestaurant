@@ -3,10 +3,15 @@
     <div class="homeWrapper">
 
       <div class="homeTile">
-        <div class="spinnerDish" [hidden]="dishes">
+        <div class="spinnerDish" [hidden]="dishes || dishErrMess">
           <mat-spinner></mat-spinner>
           <h4>Loading . . . Please Wait</h4>
         </div>
+        <div *ngIf="dishErrMess">
+          <h2>Error</h2>
+          <h4>{{dishErrMess}}</h4>
+        </div>
+        
         <mat-card *ngIf="dishes">
           <mat-card-header>
             <div mat-card-avatar></div>
