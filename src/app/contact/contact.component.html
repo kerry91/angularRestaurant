@@ -1,4 +1,6 @@
 <div class="container">
+  <div class="contact">
+    <div class="contact-wrapper">
 
   <div fxFlex>
     <div>
@@ -36,6 +38,7 @@
 </div>
 
 <div fxFlex fxFlexOffset="20px" class="form-size">
+  <p>{{feedbackForm.value | json}}</p>
   <h3>Send us your Feedback</h3>
   <form novalidate [formGroup]="feedbackForm" #fform="ngForm" (ngSubmit)="onSubmit()">
       <p>
@@ -58,6 +61,18 @@
           <mat-error *ngIf="formErrors.email">{{formErrors.email}}</mat-error>
         </mat-form-field>
       </p>
+      <p>
+        <mat-slide-toggle class="half-width" formControlName="agree">May we contact you?</mat-slide-toggle>
+        <mat-form-field class="half-width" appearance="fill">
+          <mat-label>How?</mat-label>
+          <mat-select formControlName="contacttype">
+            <mat-option *ngFor="let contacttype of contacttype" [value]="contacttype.typeValue">
+              {{contacttype.typeValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </p>
+      
     <p>
       <mat-form-field class="full-width">
         <textarea matInput formControlName="message" placeholder="Your Feedback" rows=12></textarea>
@@ -66,3 +81,6 @@
     <button type="submit" mat-button class="background-primary text-floral-white"
     [disabled]="feedbackForm.invalid">Submit</button>
   </form>
+
+</div>
+</div>

@@ -4,11 +4,15 @@ import { LeaderService } from '../services/leader.service';
 
 import { Params, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { expand } from '../animations/app.animation';
 
 @Component({
   selector: 'app-leaderdetail',
   templateUrl: './leaderdetail.component.html',
-  styleUrls: ['./leaderdetail.component.scss']
+  styleUrls: ['./leaderdetail.component.scss'],
+  animations:[
+    expand()
+  ]
 })
 export class LeaderdetailComponent {
   

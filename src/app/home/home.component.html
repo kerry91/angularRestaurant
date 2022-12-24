@@ -1,6 +1,6 @@
 <div class="container">
   <div class="home">
-    <div class="homeWrapper">
+    <div class="home-wrapper">
 
       <div class="homeTile">
         <div class="spinnerDish" [hidden]="dishes || dishErrMess">
@@ -12,7 +12,7 @@
           <h4>{{dishErrMess}}</h4>
         </div>
         
-        <mat-card *ngIf="dishes">
+        <mat-card *ngIf="dishes" [@expand]>
           <mat-card-header>
             <div mat-card-avatar></div>
             <mat-card-title>
@@ -27,11 +27,11 @@
       </div>
 
       <div class="homeTile">
-        <div class="spinnerPromotion" [hidden]="promotions">
+        <div class="spinnerPromotion" [hidden]="promotions" >
           <mat-spinner></mat-spinner>
           <h4>Loading . . . Please Wait</h4>
         </div>
-        <mat-card *ngIf="promotions">
+        <mat-card *ngIf="promotions" [@expand]>
           <mat-card-header>
             <div mat-card-avatar></div>
             <mat-card-title>
@@ -50,11 +50,11 @@
       </div>
 
       <div class="homeTile">
-        <div class="spinnerLeader" [hidden]="leaders">
+        <div class="spinnerLeader" [hidden]="leaders" >
           <mat-spinner></mat-spinner>
           <h4>Loading . . . Please Wait</h4>
         </div>
-        <mat-card *ngIf="leaders">
+        <mat-card *ngIf="leaders" [@expand]>
           <mat-card-header>
             <div mat-card-avatar></div>
             <mat-card-title>

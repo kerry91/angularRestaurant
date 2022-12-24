@@ -1,5 +1,5 @@
 <div class="container">
-  <div fxFlex *ngIf="leaders">
+  <div fxFlex *ngIf="leaders" [@expand]>
     <mat-list class="example-list-wrapping" *ngFor="let leader of leaders">
       <mat-list-item lines="3">
         <img matListItemAvatar src="{{ BaseURL + leader.image}}" alt="...">

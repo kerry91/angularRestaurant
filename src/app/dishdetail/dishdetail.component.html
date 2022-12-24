@@ -1,8 +1,7 @@
 <div class="container">
   <div class="dish-detail">
     <div class="dish-detail-wrapper">
-
-      <div *ngIf="dishes" [@visibility] = "visibilty">
+      <div *ngIf="dishes" [@visibility] = "visibilty" [@expand]>
         <mat-card>
           <mat-card-header>
             <mat-card-title>
@@ -34,7 +33,7 @@
         </mat-card>
       </div>
 
-      <div class="dish-detail-comment" *ngIf="dishes" [@visibility] = "visibilty">
+      <div class="dish-detail-comment" *ngIf="dishes" [@visibility] = "visibilty" [@expand]>
         <mat-list role="list">
           <h2>Comments</h2>
           <mat-list-item *ngFor="let comment of dishes.comments">
